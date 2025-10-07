@@ -77,13 +77,13 @@ jobs:
     steps:
       - name: Download packages
         uses: actions/download-artifact@v4
-        with:
-          path: packages
+#        with:
+#          path: packages
       - run: ls -R packages      
       - name: Upload to Github Releases
         uses: ncipollo/release-action@v1
         with:
-          artifacts: "packages/packages/*.tar.gz*"
+          artifacts: "packages/*.tar.gz*"
           token: ${{ secrets.GITHUB_TOKEN }}
           draft: true
           body: "Apache Directory Studio Releases for Linux, MacOS and Windows. Enhancements: support for MacOS ARM + fix TLS 1.3 bug"
