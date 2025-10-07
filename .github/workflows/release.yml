@@ -37,7 +37,7 @@ jobs:
       - name: Build with Apache Maven
         run: mvn -f pom-first.xml -U clean install  && mvn clean install 
       - name: Package releases
-        if: startsWith(github.ref, 'refs/tags/M')
+        #if: startsWith(github.ref, 'refs/tags/M')
         run: |
           set -xv
           mkdir ${{ github.workspace }}/packages
